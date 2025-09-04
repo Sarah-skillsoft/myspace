@@ -1,0 +1,66 @@
+
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Skillsoft Page Transcript</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="core_html.css" />
+<meta http-equiv="content-style-type" content="text/css2" />
+<meta name="format-detection" content="telephone=no"/>
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+newWindow="";
+windowOpen = false;
+function takeaway() {
+doWindow("takeaway.html");
+}
+function doWindow(filename) {
+while(filename.indexOf("+") > 0){
+filename = filename.replace("+", " ");
+}
+if (!newWindow.closed && newWindow.location){
+newWindow.location.href = filename;
+newWindow.focus();
+}else {
+newWindow=window.open(filename,'Title','toolbar=0,location=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=760,height=680');
+if (!newWindow.opener) {
+newWindow.opener = self;
+}
+newWindow.focus();
+windowOpen = true;
+}
+}
+function reveal_discovery(id) {
+var e = document.getElementById(id);
+if(e.style.display == 'block'){
+e.style.display = 'none';
+}else{
+e.style.display = 'block';
+}
+}
+//]]>
+</script>
+</head>
+<body id="content-transcript">
+<a id="top" name="top"></a>
+<div id="fullpage-box">
+<noscript>
+<p>This page contains a JavaScript function that prints out the current frame document. To print out the document without using JavaScript, you need to press Control P.<br /></p>
+</noscript>
+<!-- <h1 class="referencelabel">Page Transcript</h1><div id="content-box"> -->
+<div class="feature-box"><div class="feature-content-container"><h4>Question</h4><p class="feature-stem">How are resources organized within the Azure resource hierarchy?</p>
+
+<p class="feature-stem">Drag and drop the items into their correct hierarchy levels within the Azure structure</p>
+<p class="feature-stem"><strong>Options:</strong></p><ol type="A" class="options"><li class="options-list lettered-options">Production Management Group</li><li class="options-list lettered-options">Production Subscription</li><li class="options-list lettered-options">WebApp -RG</li><li class="options-list lettered-options">Database - RG</li><li class="options-list lettered-options">Web Server VM</li><li class="options-list lettered-options">SQL Database</li></ol><p class="feature-stem"><strong>Targets:</strong></p><ol class="options"><li class="options-list">Management Groups</li><li class="options-list">Subscriptions</li><li class="options-list">Resource Groups</li><li class="options-list">Resources</li></ol><h4>Answer</h4 ><p class="feature-stem"><strong>Correct answer(s):</strong></p><p class="feature-stem options">Option A = Target 1<br/>Option B = Target 2<br/>Option C = Target 3<br/>Option D = Target 3<br/>Option E = Target 4<br/>Option F = Target 4<br/></p></div></div>
+<div id="toc">
+</div>
+<!-- copyright box begins-->
+<!-- <div id="copyright-box">
+<p class="copyright-text">&#169; 2020 Skillsoft Ireland Limited</p>
+</div> -->
+<!-- copyright box ends -->
+</div>
+<!-- full page box ends -->
+</body>
+</html>

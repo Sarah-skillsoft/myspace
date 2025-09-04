@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=1.00, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type=text/javascript src="content.js"></script>
+		<script>
+			// Fallback to hardcoded template location if the below fetch fails
+			var templateLocation = "https://cdncontent.skillsoftcompliance.com/ssp/SCP_V8_2_5_1001/ria/IBTemplates/";
+			// Don't attempt to load the template location .json file if it's being run locally.
+			if (window.location.href.startsWith("https://")){
+				try {
+					var templateRequest = new XMLHttpRequest();
+					// The hostname used on the request is the same as the current host which launched this launch.html file. If is not the Percipio CDN it will fail to fetch the template JSON file, and use the fallback. Did not use a hardcoded hostname in order to support a future switch from Fastly to CloudFront which may have a different host but should support the same path.
+					// The `cacheBreak` query param is there to bust the browser cache. Otherwise the old version of the template file might be kept in the browser cache for up to a years unless the user does a full reload.
+					// The last param is `false` to ensure the below runs synchronously. Otherwise, the window.onload event will fire before the template location is gathered. `fetch` does not support running sychronously.
+					templateRequest.open("GET", `https://${window.location.host}/public/c/public/interactive-templates/template-v1.json?cacheBreak=${Math.random()}`, false);
+					templateRequest.send();
+					var templateLocationContainer = JSON.parse(templateRequest.responseText);
+					templateLocation = templateLocationContainer.templateLocation || templateLocation;
+				}
+				catch (error) {
+					// If failed to get the template, log an error and revert to the hardcoded fallback URL.
+					console.error("Could not load dynamic template");
+				}
+			}
+			
+			var templateType = ComboTemplates;
+			var templateFolder = templateLocation + templateType + "/";
+			document.title = ComboTemplates;
+			
+			// Redirect to an offline html file if the online template files cannot be loaded.
+			function redirect(){
+				console.log("Redirecting...");
+				document.location.href = "launch_offline.html";
+			}
+			
+			var scriptFiles = [];
+			scriptFiles.push("scripts.js");
+			scriptFiles.push("fonts.js");
+			scriptFiles.push("css.js");
+			
+			scriptFiles.forEach(function(item, index){
+				var scriptFile = document.createElement("script");
+				scriptFile.type = "text/javascript";
+				scriptFile.onerror = function(){
+					redirect();
+				};
+				scriptFile.src = templateFolder + item;
+				document.head.appendChild(scriptFile);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main"></div>
+	</body>
+</html>
