@@ -1,0 +1,1342 @@
+body{
+	color: black;
+}
+
+body:focus:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 0px 2px #454545 inset, 0px 0px 0px 4px white inset;
+	pointer-events: none;
+}
+
+a{
+	color: #0073C4 !important;
+    background: none;
+    /* text-decoration: none; */
+    /* box-shadow: 0 1px #000001; */
+}
+
+a:focus-visible{
+	outline: black auto 1px;
+}
+
+
+#playPauseButton{
+	position: relative;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	pointer-events: all;
+}
+
+#playPauseButton:focus-visible{
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: 1px;
+    border-radius: 2px;
+}
+
+#playPauseIcon{
+	position: absolute;
+	top: 0px;
+	width: 18px;
+	height: 18px;
+	background-image: url(../images/modality-listen.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#playPauseLabel{
+	color: #0073C4;
+	font-family: Montserrat;
+	font-size: 14px;
+	padding-left: 24px;
+	font-weight: 500;
+	margin-top: -1px;
+}
+
+.pause #playPauseIcon{
+	background-image: url(../images/pause.svg);
+}
+
+
+#questionText button, .bannerText button{
+    color: #0073C4 !important;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0px;
+	text-decoration: underline;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+#questionText button:focus-visible, .bannerText button:focus-visible {
+    outline-offset: 1px;
+	outline: black auto 1px;
+}
+
+/* #questionText:focus{ */
+	/* color: red !important; */
+/* } */
+
+p:last-child{
+	margin-bottom: 0em !important;	
+}
+
+#content{
+	display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#interactiveContent{
+	flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#interactiveContent.draggingContent{
+	overflow: initial;
+}
+
+#header{
+	padding-top: 24px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	background-color: white;
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,.2);
+	flex-shrink: 0;
+}
+
+
+#main{
+	-ms-high-contrast-adjust: none;
+	color: black;
+	background: none;
+	
+}
+
+button[tool-tip]:after{
+	content: attr(tool-tip);
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 100%;
+	margin-top: 0px;
+	background-color: white;
+	padding: 4px 8px;
+	border-width: 1px;
+	font-size: 12px;
+	display: block;
+	color: black;
+	border-color: black;
+	border-radius: 4px;
+	box-shadow: 0 0px 5px 0 rgba(0,0,0,.5);
+	opacity:0;
+	transition:.3s;
+	font-weight: bold;
+	pointer-events: none;
+	min-width: 40px;
+}
+
+/* Adjust audio button tool tip position for languages with longer text.*/
+#qIcon-border:after{
+	left: auto;
+	right: -10px;
+	transform: none;
+	min-width: 40px;
+}
+
+button[tool-tip]:hover:after,  button[tool-tip]:focus:after{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#closeFeedback:after{
+	top: auto;
+	bottom: 100%;
+	margin-bottom: 0px;
+}
+
+#timerBoxButtons{
+	position: relative;
+    left: 5px;
+    margin-top: 20px;
+    z-index: 20;
+    text-align: right;
+}
+
+#timerBoxButtons .bottomButton:focus:before{
+	content: '';
+    border-color: #0099ff;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border-style: solid;
+    border-width: 2px;
+	
+	border-color: black;
+    border-radius: 6px;
+}
+
+#timerBoxButtons .bottomButton{
+	width: auto;
+}
+
+#continue{
+	background: none;
+    border-color: black;
+    color: black;
+    border-style: solid;
+}
+
+
+#beginButton{
+	margin: 0px;
+	margin-top: 20px;
+}
+
+#timer{
+	position: absolute;
+    left: auto;
+    right: 16px;
+    top: 16px;
+    bottom: auto;
+    width: 36px;
+    height: 36px;
+    color: black;
+    background-color: white;
+    background-color: #e1e1e1;
+    box-sizing: border-box;
+    /* border-style: solid; */
+    border-color: black;
+    border-width: 2px;
+    font-size: 14px;
+    border-radius: 50%;
+    padding: 0px;
+	cursor: pointer;
+	overflow: visible;
+	z-index: 9;
+}
+
+.timerLeft{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0px;
+	background-color: #da3466;
+	border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+	transform-origin: right;
+	box-shadow: white -1px 0px 0px 1px;
+
+}
+
+.timerRight{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0px;
+	left: 50%;
+    background-color: #da3466;
+	border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+	transform-origin: left;
+	box-shadow: white 1px 0px 0px 1px;
+}
+
+.timerMask{
+	position: absolute;
+    background-color: white;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.timerDisabled{
+	opacity: 0.4;
+	cursor: auto !important;
+}
+.timerDisabled .timerLeft, .timerDisabled .timerRight{
+	background-color: #333333;
+}
+
+
+#timerIcon{
+    position: absolute;
+    top: 50%;
+    top: 49.5%;
+    right: auto;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	background-color: white;
+    background-image: url(../images/stopwatch-black.svg);
+	background-size: 100%;
+	width: 18px;
+	height: 18px;
+}
+
+#timerText{
+	position: relative;
+    display: inline-block;
+    display: none;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.timerDisabled #timerText{
+	color: #333333;
+}
+
+.runningOutOfTime {
+    color: #da3466 !important;
+    font-weight: bold;
+    background-color: #e1e1e1 !important;
+}
+
+.runningOutOfTime #timerText{
+	display: block;
+}
+
+
+#gradient{
+	display: none;
+}
+
+#questionText{
+	padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+    /* font-size: 18px; */
+    font-size: 17px;
+    font-weight: normal;
+    display: block;
+    color: black;
+    /* border-left-style: solid; */
+    /* border-color: #da3466; */
+    margin-left: 0px;
+	font-family: Spectral;
+	line-height: 21px;
+}
+
+.hasTimer {
+    /* padding-right: 105px !important; */
+}
+
+.container{
+	
+}
+
+#drags{
+	float: left;
+    /* text-align: center; */
+    z-index: 10;
+    padding: 3px;
+    margin-top: 3px;
+    width: 40%;
+}
+
+#dragList{
+	padding-top: 10px;
+	
+}
+
+.drag{
+	position: relative;
+    outline: none;
+    margin: 0px;
+    background-color: white;
+    cursor: pointer;
+    cursor: grab;
+    height: auto;
+    min-height: 50px;
+    display: inline-flex;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 0px;
+    width: 100%;
+    box-shadow: -7px 7px 0px 0 rgba(0, 0, 0, 1);
+    transition: transform 0.25s;
+	border-radius: 4px;
+	display: table;
+}
+
+.noDupTargets{
+	min-height: 55px;
+	max-height: 85px;
+}
+
+.dropZone .noDupTargets{
+	max-height: 120px;
+}
+
+.drag:focus {
+    background-color: #454545;
+    border-color: #454545;
+    color: white;
+}
+
+.dragging{
+	cursor: grabbing;
+	z-index: 1000;
+	transform: rotate(3deg);
+	
+}
+
+.dragLI{
+	padding-bottom: 15px;
+	vertical-align: middle;
+}
+
+.drags1-4{
+	width: 75%;
+}
+
+.drags5-6{
+	width: 75%;
+}
+
+.drags7-8 {
+    width: 44%;
+    margin-left: 15px;
+}
+
+.dragImage {
+    width: 110px;
+}
+
+.dragImage .drag {
+	box-shadow: -5px 5px 0px 0 rgba(0, 0, 0, 1);
+    transition: transform 0.25s;
+	
+	border-color: #000000;
+    border-width: 1px;
+}
+
+.dragHandle{
+	display: none;
+}
+
+.dragLabel{
+	position: relative;
+	top: 0px;
+	transform: none;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	line-height: 16px;
+	text-align: left;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dragImage .dragLabel {
+	position: absolute;
+	background-color: rgba(255,255,255,0.9);
+	color: black;
+	text-align: center;
+}
+
+.discoveryMode .dragLabel{
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 18px;
+	text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dragImage .drag:focus .dragLabel{
+	color: white;
+	background-color: #454545;
+}
+
+.dragSelected{
+	background-color: #454545;
+}
+
+.dragSelected .dragLabel{
+	color: white;
+	
+}
+
+.dragImage .dragSelected .dragLabel{
+	background-color: rgb(69, 69, 69);
+}
+
+#targets .drag{
+	box-shadow: none;
+}
+
+#targets .dragLI{
+	padding-bottom: 4px;
+}
+
+#targets{
+	background:none;
+	height: calc(100% - 10px);
+    text-align: center;
+    width: 60%;
+    padding-right: 20px;
+    /* background-image: url(../images/targetBlueBG.svg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+	
+}
+
+#targetList{
+	padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#targetList:focus{
+	outline: none;
+}
+
+.targetLI{
+	background: none;
+    padding: 10px;
+    /* padding-top: 5px; */
+	/* padding-bottom: 5px; */
+    box-sizing: border-box;
+}
+
+.targets2 {
+    position: absolute;
+    height: 70%;
+}
+
+.targets2:first-of-type {
+    left: 0px;
+    top: 0px;
+}
+
+.targets2:last-of-type {
+    right: 0px;
+    bottom: 0px;
+}
+
+.target{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: lightgrey;
+    display: inline-block;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0px;
+    border-color: white;
+    vertical-align: top;
+    border-radius: 8px;
+    /* overflow: hidden; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.targetFinished{
+	cursor: pointer;
+}
+
+.target_background{
+	border-radius: 8px;
+}
+
+.targetIcon{
+	display: none;
+}
+
+
+.width50{
+	width: 50% !important;
+}
+
+#targets.width50{
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+
+.targetLabel{
+	border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+	font-size: 14px;
+}
+
+
+.discoveryMode .targetLabel{
+	border-bottom-left-radius: 0px; 
+    border-bottom-right-radius: 0px; 
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+	bottom: initial;
+	top: 0px;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+.discoveryMode .dropZoneTop{
+	top: initial;
+    bottom: 0px;	
+	
+	bottom: initial;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 13px;
+}
+
+.targetGray{
+		opacity: 1;
+		background-color: white;
+		filter: none;
+}
+
+.targetGray .target_background{
+	opacity: 1;
+}
+
+.targetX:focus::after{
+	content: '';
+    position: absolute;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    left: -9px;
+    top: -9px;
+    border: solid 3px;
+    border-radius: 8px;
+}
+
+.target:focus{
+	box-shadow: 0 0 0px 3px #ffffff, 0 0 0px 6px black, 0 0 0px 9px #ffffff;
+}
+
+.target:focus .target_background{
+	opacity: 1;
+}
+
+#keyboardDiv{
+	position: absolute;
+    bottom: 0px;
+    z-index: 10;
+}
+
+.keyboardButton{
+	position: relative;
+	left: 16px;
+    width: auto;
+    height: 49px !important;
+    font-size: 14px;
+    background-color: white;
+    white-space: nowrap;
+    padding: 0px;
+    line-height: 0px;
+	color: black;
+	padding-left: 42px;
+	overflow: visible;
+}
+
+.isTablet .keyboardButton{
+	display: none;
+}
+
+.keyboardButton:hover, .keyboardButton:focus{
+	color: black;
+}
+
+
+.keyboardButton:hover::before{
+	position: absolute;
+    content: "";
+    width: calc(100% + 20px);
+    height: calc(100% - 14px);
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    top: 7px;
+    left: -8px;
+}
+
+.keyboardButton:focus::after{
+    content: '';
+    border-color: black;
+    width: calc(100% + 26px);
+    height: calc(100% - 8px);
+    position: absolute;
+    left: -13px;
+    top: 2px;
+    border-style: solid;
+    border-width: 2px;
+	border-radius: 8px;
+
+}
+
+
+#keyboardText {
+    position: relative;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    padding-left: 42px;
+}
+
+
+#keyboardIcon{
+	left: 0px;
+	right: unset;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+	background-color: white;
+    background-image: url(../images/keyboard-black.svg);
+}
+
+.keyboardButton:hover, .keyboardButton:focus{
+	background: none;
+	border: none;
+}
+
+.keyboardButton:hover #keyboardIcon,.keyboardButton:focus #keyboardIcon{
+	top: 50%;
+	background-image: url(../images/keyboard-black.svg);
+}
+
+#qIcon-border{
+	left: auto;
+	right: 16px;
+	border-style: none;
+    width: 36px;
+    height: 36px;
+	overflow: visible;
+	top: 20px;
+}
+
+#qIcon-border:hover,#qIcon-border:focus{
+	background: none;
+	outline-style: none;
+	
+}
+
+#qIcon-border:focus:before, #timer:focus:before {
+    content: '';
+    border-color: #222222;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border-style: solid;
+    border-width: 2px;
+	border-radius: 50%;
+}
+
+
+#qIcon{
+	display: none;
+}
+
+.audioIcon{
+	left: 0px;
+	width: 36px;
+    height: 36px;
+	background-color: black;
+	border-radius: 50%;
+	/* background-image: url(../images/av-volume.svg) !important; */
+	background-image: url(../images/ic_play_arrow_24px-white.svg) !important;
+	background-size: 60% !important;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.audioIcon:hover{
+	
+	background-color: #454545;
+}
+
+.pause{
+	background-image: url(../images/ic_pause_24px-white.svg) !important;
+}
+
+.play{
+	background-image: url(../images/ic_play_arrow_24px-white.svg) !important;
+}
+
+.animateQIcon{
+	animation: none;
+}
+
+.animateAudioIcon{
+	animation: none;
+}
+
+.bannerText{
+	position: relative;
+	background: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-top: 0px;
+	color: black;
+	border-style: none;
+	margin: 0px;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: Spectral;
+	line-height: 21px;
+}
+
+
+.style2 .dragImage .drag{
+	border-width: 1px;
+	box-shadow: -5px 5px 0px 0 black;
+}
+
+
+#instructionText2{
+	display: none;
+}
+
+#checkmark{
+	background-color: black;
+	background-image: url(../images/info-glyph-24.svg);
+	background-size: 60%;
+	width: 32px;
+    height: 32px;
+	display: none;
+}
+
+#footer{
+	position: relative;
+
+	background-color: white;
+	border: none;
+	height: 50px;
+	flex-shrink: 0;
+}
+
+.toast{
+	bottom: 50px;
+}
+
+.toast-icon, #closeToast{
+	background-color: transparent;
+}
+
+#bottomButtons{
+	text-align: right;
+    left: unset;
+    right: 0px;
+    height: 50px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+
+
+.bottomButton{
+	border-radius: 4px;
+	border-color: black;
+	color: white;
+	background-color: black;
+	font-size: 14px;
+	min-width: 100px;
+	height: 35px;
+}
+#submitButton:hover {
+    border-color: #111111;
+    background-color: #454545;
+}
+
+
+#submitButton:focus:before, #resetButton:focus:before{
+	border-color: black;	
+	border-radius: 8px;
+}
+
+#beginButton:focus:before{
+	content: "";
+	border-color: black;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border-style: solid;
+    border-width: 2px;
+	border-radius: 8px;
+}
+
+#resetButton{
+	color: black;
+	border-style: none;
+	background: none;
+}
+
+
+#resetButton:hover{
+	background: none;
+	border-color: black;
+	color: black;
+	border-style: solid;
+}
+
+.feedbackIcon{
+	left: auto;
+	right: -15px;
+}
+
+.dragImage .feedbackIcon{
+	left: 5px;
+}
+
+
+
+.correctFinished{
+	box-shadow: -5px 5px 0px 0 #14c35c;
+	outline-color: #14c35c;
+	outline-width: 5px;
+}
+
+.correct,.incorrect{
+	color: black;
+}
+
+.correct .feedbackIcon {
+    /* background-color: #1B8057; */
+}
+
+#closeFeedback{
+	overflow: visible;
+}
+
+#closeFeedback:focus {
+    border-radius: 4px;
+    border-color: #0099FF;
+}
+
+/* Desktop In Percipio */
+/* @media all and (max-width: 800px) and (max-height: 640px){ */
+@media all and (max-height: 640px){
+	
+	#header::before {
+		top: 0px;
+		border-top-right-radius: 0px;
+		height: 100%;
+		
+	}
+	
+	#drags{
+		width: 50%;
+	}
+	
+	#targets{
+		width: 50%;
+		padding-right: 10px;
+	}
+	
+	#targetList{
+		padding-top: 10px;
+		/* padding-bottom: 0px; */
+		box-sizing: border-box;
+	}
+	.targetLI {
+		background: none;
+		padding: 7px;
+		box-sizing: border-box;
+	}
+	
+	.targets2 {
+		position: relative;
+		height: 100%;
+	}
+	
+	.dragLI {
+		padding-bottom: 10px;
+	}
+	
+	.drags5-6 {
+		width: 44%;
+		margin-left: 15px;
+	}
+	
+	.dragImage{
+		width: 110px;
+	}
+	
+	.dropZone .dragImage{
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+	
+	
+	
+}
+
+@media all and (max-width: 600px) {
+	#header{
+		padding-top:16px;
+		padding-left: 24px;
+		padding-right: 24px;
+		min-height: 78px;
+	}
+	
+	#header::before {
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		border-radius: 0px;
+		padding-top:0px;
+		top: 0px;
+	}
+	
+	#beginButton{
+		border-radius: 4px;
+	}
+	
+	
+	#timerBoxButtons .bottomButton{
+		display: block;
+		width: 100%;
+		left: -5px;
+		border-radius: 4px;
+		margin: 5px 0px;
+		line-height: 30px;
+		overflow: hidden;
+	}
+	
+	#timer{
+		width: 30px;
+		height: 30px;
+		top: 8px;
+		right: 8px;
+	}
+	
+	#timerIcon{
+		width: 15px;
+		height: 15px;
+		top: 50%;
+	}
+	
+	#timerText{
+		line-height: 26px;
+		font-size: 14px;
+	}
+	
+	.hasTimer{
+		/* padding-right: 48px !important; */
+	}
+	
+	
+	#qIcon-border{
+		top: 6px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+	}
+	
+	#questionText{
+		font-size: 14px;
+		padding-right: 0px;
+		margin-left: 0px;
+		margin-top: 10px;
+		line-height: 18px;
+		
+	}
+	
+	.audioIcon{
+		width: 30px;
+		height: 30px;
+		background-color: black;
+	}
+	
+	.audioIcon:hover{
+		background-color: black;
+	}
+	
+	.bannerText{
+		padding-left: 0px;
+		padding-bottom: 10px;
+		padding-right: 0px;
+		font-size: 14px;
+		line-height: 18px;
+	}
+	
+	#drags{
+		background-color: transparent;
+		border-radius: 0px;
+		width: 95% !important;
+		margin-top: 0px;
+		z-index: 200;
+		padding-top: 80px;
+		padding-bottom: 20px;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.dragLabel{
+		padding-left: 10px;
+		padding-right: 10px;
+		line-height: 12px;
+	}
+	
+	.discoveryMode .dragLabel{
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 12px;
+	}
+	
+	#mobileDragsBackground{
+		position: absolute;
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		border-radius: 4px;
+		box-shadow: 0px 5px 15px 3px rgba(0,0,0,0.4);
+	}
+	
+	
+	
+	#dragOptions{
+		position: relative;
+		font-weight: bold;
+		background-color: white;
+		color: black;
+		padding: 0px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		transition: bottom 0.5s;
+		left: 50% !important;
+		transform: translateX(-50%);
+		bottom: -150px;
+		max-width: 90%;
+		min-height: 40px;
+	}
+	
+	#dragOptions:before{
+		content: "";
+		position: absolute;
+		width: calc(100% + 6px);
+		height: calc(100% + 6px);
+		top: -3px;
+		left: -3px;
+		background: linear-gradient(to right, #DA3466, #443774);
+		border-radius: 8px;
+		box-shadow: 1px 4px 16px -1px rgba(0, 0, 0, 0.25), 0px 4px 8px -4px rgba(0, 0, 0, 0.4);
+	}
+	
+	.dragOptionsFinished{
+		bottom: 0px !important;
+	}
+	
+	#dragOptionsText{
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+		position: relative;
+		padding: 5px;
+		padding-left: 17px;
+		padding-right: 55px;
+		border-radius: 5px;
+		background-color: white;
+		min-height: 40px;
+		box-sizing: border-box;
+	}
+	
+	.dragOptionsTextFinished{
+		opacity: 1 !important;
+	}
+	
+	#dragOptionsFade{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 100;
+	}
+	
+	.dragOptionsTitle {
+		position: relative;
+		top: 20px;
+		left: 18px;
+		font-size: 17px;
+		font-weight: bold;
+		padding-right: 60px;
+		padding-bottom: 15px;
+		min-height: 25px;
+		text-align: left;
+	}
+	
+	#dragOptionsClose {
+		position: absolute;
+		width: 28px;
+		height: 28px;
+		right: 10px;
+		top: 13px;
+		background-image: url(../images/close.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		border-style: solid;
+		border-width: 2px;
+		border-color: #fff;
+		outline: none;
+		cursor: pointer;
+		z-index: 10;
+	}
+	
+	
+	#dragOptionsIcon{
+		position: absolute;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 8px;		
+		background-image: url('../images/tap-01.svg');
+		/* background-image: url('../images/ic_fingerprint_24px.svg'); */
+		/* background-image: url('../images/fingerprint-recognition 1.jpg'); */
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 110%;
+	}
+	
+	#showNextDrag{
+		left: 177px;
+	}
+	
+	#dragList{
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+	
+	.dragLI{
+		width: 45%;
+		width: calc(50% - 20px);
+		padding: 5px;
+		margin-left: 6px;
+		margin-right: 0px;
+	}
+	
+	.drag{
+		height: 40px;
+	}
+	.noDupTargets{
+		min-height: 40px;
+		max-height: 90px;
+	}
+	
+	.dropZone .noDupTargets{
+		max-height: 90px;
+	}
+	
+	.dragImage .drag{
+		
+	}
+	
+	#drags .dragImage:first-child .dragLabel{
+		color: black;
+	}
+	
+	.dragImage .dragging .dragLabel{
+		color: white !important;
+	}
+	
+	#targets{
+		width: 100% !important;
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+		height: 230px;
+		height: 200px;
+		
+	}
+	
+	#targetList{
+		
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	
+	.targetLI{
+		padding: 5px;
+	}
+	
+	.target:focus {
+		box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+	}
+	
+	.discoveryMode .targetLabel{
+		font-size: 14px;
+	}	
+		
+	
+	#targets .dragLI {
+		width: 90%;
+		padding: 0px;
+	}
+	
+	.dropZone{
+		bottom: -3px;
+	}
+	
+	#footer{
+		position: absolute;
+		border: none;
+		height: 40px;
+	}
+	
+	#bottomButtons{
+		padding: 0px;
+		height: 100%;
+		background-color: white;
+		
+	}
+	
+	.bottomButton {
+		background-color: black;
+		border-radius: 0px;
+		border-style: none;
+		overflow: hidden;
+		border-top-style: solid;
+		border-color: black;
+		height: 100%;	
+	}
+	
+	#resetButton{
+		border-top-style: solid;
+		border-color: black;
+	}
+	
+	.feedbackIcon{
+		right: -10px;
+	}
+	
+	
+
+}
+

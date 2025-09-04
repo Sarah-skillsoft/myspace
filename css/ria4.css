@@ -1,0 +1,254 @@
+/* @media all and (max-height: 537px) and (min-width: 1000px){ */
+@media all and (min-width: 1025px){
+	a {
+		color: #0073C4 !important;
+		background: none;
+		/* text-decoration: none; */
+		/* box-shadow: 0 1px #000001; */
+	}
+	
+	#main{
+		max-width: 100%;
+		background: none;
+	}
+	
+	
+	#header{
+		width: 33.33%;
+		height: 100%;
+		background-color: white;
+		/* filter: drop-shadow(5px 4px 11px rgba(0, 0, 0, 0.25)); */
+		box-shadow: 4px 2px 7px 0 rgba(0,0,0,.3);
+		z-index: 5;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	#playPauseButton{
+		margin-bottom: 10px;
+	}
+	
+	#qIcon-border {
+		top: 16px;
+		right: auto;
+		left: calc(33% - 48px);
+	}
+	
+	
+	#qIcon-border:focus:before, #timer:focus:before {
+		border-color: #222222;
+	}
+	
+	
+	#timer{
+		top: 16px;
+		right: 16px;
+        left: auto;
+	}
+	
+	
+	
+	
+	
+	#text_div{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-left: 9%;
+		padding-right: 9%;
+	}
+	
+	#text_div.scrollText{
+		height: calc(100% - 120px);
+		overflow: auto;
+		margin-top: 70px;
+		padding-top: 0px;
+		top: 0px;
+		transform: none;
+	}
+	
+	#questionText{
+		color: black;
+		border: none;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		font-family: Spectral;
+		font-size: 18px;
+		line-height: 23px;
+		padding-bottom: 37px;
+	}
+	
+	
+	
+	.bannerText{
+		color: black;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		font-family: Spectral;
+		font-size: 18px;
+		line-height: 23px;
+	}
+	
+	
+	
+	.hasTimer {
+		/* padding-right: 0px !important; */
+	}
+	
+	#interactiveContent{
+		width: 66.66%;
+		right: 0px;
+		position: absolute;
+		min-height: calc(100% - 50px);
+	}
+	
+	
+	
+	
+	
+	#drags{
+		position: absolute;
+		float: none;
+		top: 0px;
+		width: 360px;
+		left: 0px;
+		height: 100% !important;
+		margin-top: 0px;
+	}
+	
+	
+	
+	#optionsList{
+		position: relative;
+		height: 100%;
+	}
+	
+	#dragList{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	#dragList.scrollDrags{
+		top: 0px;
+		transform: none;
+	}
+	
+	.drags5-6:not(.dragImage) {
+		width: 75%;
+		margin-left: 0px;
+	}
+	
+	.drag{
+		border-radius: 4px;
+		margin-left: 0px;
+	}
+	
+	#targets .dragLI{
+		width: 95%;
+	}
+	
+	#targets .dragImage{
+		width: 44%;
+		width: calc(50% - 6px);
+	}
+	
+	#targets .drag {
+		margin-left: 0px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	.dragLabel{
+		text-align: center;
+	}
+	
+	#targets{
+		position: absolute;
+		background: none;
+		float: none;
+		top: 0px;
+		width: calc(100% - 350px);
+		right: 0px;
+		height: 100% !important;
+		
+		padding: 16px;
+		padding-left: 0px;
+	}
+		
+	
+	#footer{
+		position: absolute;
+		/* background-color: #f3f3f3; */
+		width: 66.66%;
+		width: 67%;
+		right: 0px;
+	}
+	
+	
+	#bottomButtons {
+		text-align: center;
+		left: 50%;
+		transform: translateX(-50%);
+		right: unset;
+		height: 50px;
+		padding-top: 7.5px;
+		padding-bottom: 7.5px;
+	}
+	
+	
+	
+	#checkmark{
+		left: 0px;
+	}
+	
+	#instructionText2 {
+		width: calc(100% - 18%);
+		white-space: normal;
+		padding-left: 48px;
+		padding-right: 0px;
+		box-sizing: border-box;
+	}
+	
+	
+	
+	#popupBox{
+		max-width: 600px;
+	}
+	
+	#feedbackBox{
+		max-width: 600px;
+	}
+	
+	#keyboardDiv{
+		left: calc(3% - 2px);
+	}
+	
+	.keyboardButton{
+		left:0px;
+	}
+	
+}	
+
+@media all and (max-height: 537px) and (min-width: 1280px){
+	
+	
+}
+
+@media all and (min-height: 650px) and (min-width: 1025px){
+	#main{
+		width: calc(100% - 80px);
+		max-width: 1600px;
+		border-radius: 8px;
+		box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.50), 0px 4px 30.1px 0px rgba(0, 0, 0, 0.30);
+
+	}
+}	

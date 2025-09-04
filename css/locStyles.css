@@ -1,0 +1,363 @@
+/* ------------------------------------------ */
+/* JA */
+/* ------------------------------------------ */
+
+.lang-ja #questionText{
+	line-height: 18px;
+}
+
+.lang-ja .bannerText{
+	line-height: 16px;
+}
+
+.lang-ja #feedbackTitle, .lang-ja .dragOptionsTitle{
+	line-height: 18px;
+}
+
+.lang-ja #feedbackText{
+	line-height: 16px;
+}
+
+.lang-ja .clickLabel, .lang-ja .targetLabel{
+	line-height: 14px;
+}
+
+.lang-ja #instructionText2{
+	line-height: 15px;
+}
+
+/* ------------------------------------------ */
+/* Arabic */
+/* ------------------------------------------ */
+
+.lang-ar{
+	direction: rtl;
+}
+
+.lang-ar #questionText {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+	margin-left: 0px;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.lang-ar.ria4 #questionText {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	margin-right: 0px !important;
+	margin-left: 0px;
+	border-left-style: none;
+	border-right-style: none !important;
+}
+
+.lang-ar .hasTimer {
+	padding-right: 10px !important;
+    padding-left: 105px !important;
+}
+
+.lang-ar .bannerText{
+	text-align: unset;
+	padding-right: 0px !important;
+	padding-left: 0px;
+}
+
+.lang-ar.ria4 .bannerText {
+	text-align: unset;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+
+.lang-ar #playPauseButton{
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+.lang-ar #playPauseLabel{
+	padding-left: 0px;
+    padding-right: 24px;
+}
+
+.lang-ar #qIcon-border {
+    right: auto;
+    left: 16px;
+}
+
+.lang-ar.ria4 #qIcon-border{
+	right: calc(33% - 48px) !important;
+	left: auto !important;
+	z-index: 100;
+}
+
+.lang-ar #qIcon-border:hover, .lang-ar #qIcon-border:focus, .lang-ar #timer:hover, .lang-ar #timer:focus{
+	/* z-index: 230; */
+}
+
+
+
+.lang-ar #qIcon-border:after {
+    left: -10px;
+    right: auto;
+}
+
+.lang-ar #timer{
+	direction: ltr;
+	right: auto;
+    left: 16px;
+}
+
+.lang-ar.ria4 #timer{
+	/* left: auto !important; */
+	/* right: calc(33% - 91px) !important; */
+	z-index: 100;
+}
+
+.lang-ar #checkmark{
+	left: auto;
+	right: 17px;
+}
+
+.lang-ar #instructionText2{
+	padding-left: 10px;
+	padding-right: 65px;
+}
+
+.lang-ar #feedbackTitle{
+	padding-right: 0px;
+	padding-left: 30px;
+}
+
+.lang-ar #closeFeedback{
+	right: auto;
+    left: 20px;
+}
+
+.lang-ar .toast {
+    padding-right: 64px;
+    padding-left: 56px;
+}
+
+.lang-ar .toast-iconArea {
+    left: auto;
+    right: 0px;
+}
+
+.lang-ar .toast-icon {
+    left: auto;
+    right: 12px;
+}
+
+.lang-ar #closeToast {
+    right: auto;
+    left: 16px;
+}
+
+.lang-ar.ria4 #footer{
+	right: auto;
+	left: 0px;
+}
+
+.lang-ar #keyboardDiv {
+    direction: ltr;
+    left: 0px;
+}
+
+.lang-ar.ria4 #keyboardDiv{
+	left: auto;
+	right: 3%;
+}
+
+.lang-ar.ria4 .keyboardButton{
+	padding-left: 0px;
+	padding-right: 42px;
+}
+
+.lang-ar.ria4 #keyboardIcon{
+	left: auto;
+	right: 0px;
+}
+
+.lang-ar.ria4 #interactiveContent{
+	right: auto;
+	left: 0px;
+}
+
+.drag_many_to_many.lang-ar #drags, .drag_many_to_one.lang-ar #drags, .drag_sequencing_ranking.lang-ar #drags{
+	float: right;
+}
+
+.lang-ar.ria4 #drags{
+	left: auto;
+	right: 0px;
+}
+
+.drag_many_to_many.lang-ar #targets, .drag_many_to_one.lang-ar #targets, .drag_sequencing_ranking.lang-ar #targets{
+	background: none;
+}
+
+.drag_many_to_many.lang-ar #targets{
+    padding-right: 0px;
+    padding-left: 20px;
+}
+
+.lang-ar.ria4 #targets{
+	right: auto;
+	left: 0px;
+}
+
+.drag_many_to_many.lang-ar #targets:before, .drag_many_to_one.lang-ar #targets:before, .drag_sequencing_ranking.lang-ar #targets:before{
+	content: ' ';
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-image: url(../images/targetBlueBG.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+.lang-ar.ria4 #targets:before{
+	background: none;
+}
+
+.lang-ar .dragLabel{
+	text-align: right;
+}
+
+.lang-ar.drag_hotspot .dragLabel{
+	text-align: center;
+}
+
+.lang-ar .drag .feedbackIcon {
+    right: auto;
+    left: -15px;
+}
+
+.lang-ar.drag_hotspot .feedbackIcon, .lang-ar .dragImage .feedbackIcon {
+    left: 5px;
+}
+
+.lang-ar .hiddenText{
+	left: auto;
+	right: -10000px;
+}
+
+
+/* Play/Pause Audio */
+.lang-enus #playPauseLabel{
+	text-transform: lowercase;
+}
+.lang-enuk #playPauseLabel{
+	text-transform: lowercase;
+}
+.lang-enca #playPauseLabel{
+	text-transform: lowercase;
+}
+.lang-enau #playPauseLabel{
+	text-transform: lowercase;
+}
+.lang-ennz #playPauseLabel{
+	text-transform: lowercase;
+}
+.lang-enin #playPauseLabel{
+	text-transform: lowercase;
+}
+
+
+@media (max-height: 640px){
+	.drag_many_to_many.lang-ar #targets{
+		padding-left: 10px;
+	}
+}
+
+/* Phone */
+@media all and (max-width: 600px) {
+	
+	/* ------------------------------------------ */
+	/* JA */
+	/* ------------------------------------------ */
+	
+	.lang-ja #questionText{
+		line-height: 14px;
+	}
+
+	.lang-ja .bannerText{
+		line-height: 13px;
+	}
+	
+	.lang-ja #feedbackTitle, .lang-ja .dragOptionsTitle{
+		line-height: 18px;
+	}
+	
+	.lang-ja #feedbackText{
+		line-height: 14px;
+	}
+	
+	/* ------------------------------------------ */
+	/* Arabic */
+	/* ------------------------------------------ */
+	
+	.lang-ar #questionText {
+		padding-left: 48px !important;
+		margin-right: 10px;
+		margin-left: 0px;
+	}
+	
+	.lang-ar .bannerText {
+		padding-right: 24px !important;
+		padding-left: 10px;
+	}
+	
+	.lang-ar .hasTimer {
+		padding-left: 48px !important;
+	}
+	
+	.lang-ar #qIcon-border {
+		left: 10px;
+	}
+	
+	.lang-ar #timer {
+		left: 10px;
+	}
+
+	.lang-ar #checkmark{
+		right: 10px;
+	}
+	
+	.lang-ar #instructionText2{
+		padding-right: 50px;
+	}
+	
+	.lang-ar #dragOptions{
+		left: auto;
+		right: 50% !important;
+		transform: translateX(50%);
+	}
+	
+	.lang-ar .drag .feedbackIcon{
+		left: -10px;
+	}
+	
+	.lang-ar .dragImage .feedbackIcon{
+		left: 5px;
+	}
+	
+	.lang-ar .dragOptionsTitle {
+		left: auto;
+		right: 18px;
+		padding-right: 0px;
+		padding-left: 60px;
+		text-align: right;
+	}	
+	.lang-ar #dragOptionsClose {
+
+		right: auto;
+		left: 10px;
+
+	}
+	
+}
